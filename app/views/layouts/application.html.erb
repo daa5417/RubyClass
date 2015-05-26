@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Listache</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header class="app-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-push-2 text-center">
+					<%= image_tag "listache.png", width: "400" %>
+					<h1 class="sr-only">Listache</h1>
+				</div>
+			</div>
+		</div>
+	</header>
+<main class ="container">
+	<div class="row">
+		<div class="col-sm-8 col-sm-push-20">
+			<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
+<%= yield %>
+		</div>
+	</div>
+</main>
+</body>
+</html>

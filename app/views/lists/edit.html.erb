@@ -1,0 +1,29 @@
+<div class="container">
+<h1>Editing list</h1>
+
+<%= render 'form' %>
+
+<hr/>
+<%= form_for @list, url: {action: "add_item"}, method: "post" do |f| %>
+	<div class="field">
+		<label for="new-item">Add a List Item</label>
+		<input type="text" id="new-item" name="item" />
+	</div>
+	<div class="actions">
+		<button type="submit">Add!</button>
+	</div>
+<% end %>
+
+<hr/>
+<h3>Remove Items from this List</h3>
+<% if @list.list_items? %>
+	<ul>
+		<% @list.list_items.each do |item| %>
+			<li><%= link_to item, item, method: :delete %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<%= link_to 'Show', @list %> |
+<%= link_to 'Back', lists_path %>
+</div>
